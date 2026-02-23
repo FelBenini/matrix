@@ -80,4 +80,11 @@ func main() {
 	v2 = vector.From([]float32{3, 2})
 	fmt.Println(v1.Dot(v2))
 
+	fmt.Println("\n\033[1m----ex03----\033[0m")
+	v1 = vector.From([]float32{0, 0, 0})
+	fmt.Println(v1.Norm_1(), v1.Norm(), v1.Norm_inf())
+	v1 = vector.From([]float32{1, 2, 3})
+	fmt.Println(v1.Norm_1(), v1.Norm(), v1.Norm_inf())
+	v1 = vector.From([]float32{-1, -2})
+	fmt.Println(v1.Norm_1(), v1.Norm(), v1.Norm_inf())
 }
