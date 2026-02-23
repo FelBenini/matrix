@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+
 	"github.com/FelBenini/matrix/srcs/matrix"
+	"github.com/FelBenini/matrix/srcs/number"
 	"github.com/FelBenini/matrix/srcs/vector"
 )
 
@@ -33,6 +35,7 @@ func main() {
 	m = matrix.From([][]float32{{1, 2}, {3, 4}})
 	m.Scl(2)
 	m.Print()
+
 	fmt.Println("\n\033[1m----ex01----\033[0m")
 	v1 := vector.From([]float32{1, 0, 0})
 	v2 := vector.From([]float32{0, 1, 0})
@@ -43,4 +46,26 @@ func main() {
 	v2 = vector.From([]float32{0, 10, -100})
 	v_res = vector.LinearCombination([]vector.Vector[float32]{v1, v2}, []float32{10, -2})
 	v_res.Print()
+
+	fmt.Println("\n\033[1m----ex02----\033[0m")
+	fmt.Println("\nNumbers:")
+	fmt.Println(number.Lerp(0, 1, 0))
+	fmt.Println(number.Lerp(0, 1, 1))
+	fmt.Println(number.Lerp(0, 1, 0.5))
+	fmt.Println(number.Lerp(21, 42, 0.3))
+	fmt.Println(number.Lerp(42, 21, 0.3))
+	fmt.Println("\nVectors:")
+	v1 = vector.From([]float32{2, 1})
+	v2 = vector.From([]float32{4, 2})
+	v_res = vector.Lerp(v1, v2, 0.3)
+	v_res.Print()
+	v1.Print()
+	v2.Print()
+	fmt.Println("\nMatrixes:")
+	m = matrix.From([][]float32{{2, 1}, {3, 4}})
+	n = matrix.From([][]float32{{20, 10}, {30, 40}})
+	m_res := matrix.Lerp(m, n, 0.5)
+	m_res.Print()
+	m.Print()
+	n.Print()
 }

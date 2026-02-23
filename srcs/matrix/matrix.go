@@ -28,6 +28,17 @@ func From[T Number](data [][]T) Matrix[T] {
 	}
 }
 
+func Copy[T Number](m Matrix[T]) Matrix[T] {
+	res := m
+
+	copyData := make([][]T, m.Rows)
+	for i := range m.Data {
+		copyData[i] = append([]T(nil), m.Data[i]...)
+	}
+	res.Data = copyData
+	return res
+}
+
 func (m Matrix[T]) Print() {
 	fmt.Print("[")
 	for i := range m.Rows {
