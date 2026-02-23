@@ -6,20 +6,18 @@ import (
 
 func (v Vector[T]) Norm_1() T {
 	var res T
-	size := len(v.Data)
 	res = 0
-	for i := range size {
-		res += v.Data[i]
+	for _, val := range v.Data {
+		res += val
 	}
 	return res
 }
 
 func (v Vector[T]) Norm() T {
 	var res T
-	size := len(v.Data)
 	res = 0
-	for i := range size {
-		res += T(math.Pow(float64(v.Data[i]), 2))
+	for _, val := range v.Data {
+		res += T(math.Pow(float64(val), 2))
 	}
 	res = T(math.Sqrt(float64(res)))
 	return res
