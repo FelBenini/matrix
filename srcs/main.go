@@ -68,4 +68,16 @@ func main() {
 	m_res.Print()
 	m.Print()
 	n.Print()
+
+	fmt.Println("\n\033[1m----ex02----\033[0m")
+	v1 = vector.From([]float32{0, 0})
+	v2 = vector.From([]float32{1, 1})
+	fmt.Println(v1.Dot(v2))
+	v1 = vector.From([]float32{1, 1})
+	v2 = vector.From([]float32{1, 1})
+	fmt.Println(v1.Dot(v2))
+	v1 = vector.From([]float32{-1, 6})
+	v2 = vector.From([]float32{3, 2})
+	fmt.Println(v1.Dot(v2))
+
 }
