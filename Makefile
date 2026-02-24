@@ -1,5 +1,5 @@
 test:
 	@echo "=========================Vector tests:========================="
-	@go test -v ./srcs/vector/
+	@go test -v ./test/vector/
 
 .PHONY: test
